@@ -17,3 +17,13 @@ print('40.99 ** 10.44 = ',(40.99 ** 10.44))
 print('40.99 % 10.44 = ',(40.99 % 10.44))
 print("I'm superman")
 print('%d',(18))
+def test1 ():
+    i = 1
+    while i <= 10:
+        print(i)
+        i += 1
+    print('bye')
+test1 ()
+for name in ['Black','Yellow','Blue']:
+    print(name)
+print('5+4 =',(5+4))
