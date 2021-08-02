@@ -12,10 +12,10 @@ if op == 1 :
 elif op == 2 :
     calculate =number1-number2
     print(number1,'-',number2 ,'=',(calculate))
-elif op ==3 :
+elif op == 3 :
     calculate =number1*number2
     print(number1,'*',number2 ,'=',(calculate))
-elif op ==4 :
+elif op == 4 :
     calculate =number1/number2
     print(number1,'/',number2 ,'=',(calculate))
 else:
