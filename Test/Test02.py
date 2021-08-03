@@ -1,3 +1,4 @@
-for i in range(1,3):
-    for j in range(2,5):
-        print(i,j)
+row = int(input('How many rows ? '))
+columns = int(input('How many columms ? '))
+cal = row*columns
+print(cal ,'*')
