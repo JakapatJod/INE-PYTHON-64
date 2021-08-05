@@ -1,8 +1,9 @@
+print('1-100')
 columns = int(input('How many columns ? : '))
-bar = int(100/columns)
-x = 1
-for i in range(bar):
-    for j in range(columns):
-        print(x,end='\t')
-        x = x + 1 
+b = int(100/columns)
+p = 1
+for x in range(b):
+    for c in range(columns):
+        print(p,end='\t')
+        p += 1
     print('')
