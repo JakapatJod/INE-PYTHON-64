@@ -1,6 +1,6 @@
-print('1-100')
-columns = int(input('How many columms ? = '))
-for i in range(1,100):
-    while(i<=100):
-        print(i,'',end="")
-    print('')
+f = (input('Enter your first name: '))
+l = (input('Enter your last name: '))
+p = (input('Enter your student ID numbers: '))
+ss = f,l,p
+print('Your system login name is: ')
+print(ss)
