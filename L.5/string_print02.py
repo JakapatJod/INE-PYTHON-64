@@ -1,2 +1,2 @@
 friend = 'Kill'
-friend[0] = 'w'
+friend[0] ='W'
