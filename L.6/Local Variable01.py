@@ -9,7 +9,7 @@ def texas():
     print('texas has',birds,'birds.')
 
 def california ():
-    birds = 5000
+    birds = 8000
     print('california has',birds,'birds.')
 
 main()
