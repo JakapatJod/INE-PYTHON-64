@@ -8,7 +8,7 @@ PERIMETER_RECTANGLE_CHOICE = 4
 QUIT_CHOICE = 5
 
 def main():
-    choice = 0
+    choice = 0 
     while choice != QUIT_CHOICE:
         display_menu()
         choice = int(input('Enter your choice: '))
