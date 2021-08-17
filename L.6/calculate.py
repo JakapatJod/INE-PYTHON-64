@@ -29,16 +29,20 @@ def main():
             print('The perimeter is', \
                 rectangle.perimeter(width,length))
         elif choice == QUIT_CHOICE:
-            print('Exiting the program....')
+            print('-'*50)
+            print('\tExiting the program....')
+            print('-'*50)
         else :
             print('Error: invalid selection.')
     
 def display_menu():
+    print('-'*30)
     print('         MENU')
+    print('-'*30)
     print('1) Area of a circle')
     print('2) Circumference of a circle')
     print('3) Area of a rectangle')
     print('4) Perimeter of a rectangle')
     print('5) Quit')
-
+    print('-'*30)
 main()
