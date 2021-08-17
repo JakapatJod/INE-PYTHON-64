@@ -33,12 +33,12 @@ def main():
         else :
             print('Error: invalid selection.')
     
-    def display_menu():
-        print('         MENU')
-        print('1) Area of a circle')
-        print('2) Circumference of a circle')
-        print('3) Area of a rectangle')
-        print('4) Perimeter of a rectangle')
-        print('5) Quit')
+def display_menu():
+    print('         MENU')
+    print('1) Area of a circle')
+    print('2) Circumference of a circle')
+    print('3) Area of a rectangle')
+    print('4) Perimeter of a rectangle')
+    print('5) Quit')
 
 main()
