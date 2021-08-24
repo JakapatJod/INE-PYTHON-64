@@ -9,7 +9,6 @@ def main():
 
         # Format and display the amount.
         print(format(amount, '.2f'))
-    
     # Close the file.
     sales_file.close()
 
