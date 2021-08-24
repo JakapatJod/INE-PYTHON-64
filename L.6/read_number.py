@@ -1,20 +1,21 @@
 def main():
-    # Open a file for writing.
-    outfile = open('numbers.txt','w')
+    # Open a file for reading.
+    infile = open('numbers.txt','r')
 
-    # Get three numbers from the user.
-    num1 = int(input('Enter a number: '))
-    num2 = int(input('Enter another number: '))
-    num3 = int(input('Enter another number: '))
+    # Read three numbers from the file.
+    num1 = int(infile.readline())
+    num2 = int(infile.readline())
+    num3 = int(infile.readline())
 
-    # Write the numbers to the file.
-    outfile.write(str(num1) + '\n')
-    outfile.write(str(num2) + '\n')
-    outfile.write(str(num3) + '\n')
-    
     # Close the file.
-    outfile.close
-    print('Data written to numbers.txt')
+    infile.close()
+
+    # Add the three numbers.
+    total = num1 + num2 + num3
+
+    # Display the numbers and their total.
+    print('The numbers are:', num1, num2,num3)
+    print('Their total is:', total)
 
 # Call the main function.
 main()
