@@ -1,4 +1,4 @@
-def main():
+def main(): # อ่านที่ละบรรทัด
     # Open a file named philosophers.txt
     infile = open('philosophers.txt','r')
 
