@@ -1,8 +1,8 @@
-hours = int(input('Enter the hours worked '))
-payrate = int(input('Enter the hourly pay rate '))
-if hours >40:
-    money=((hours-40)*1.5)*payrate+(40*payrate)
-    print(money)
-else :
-    money= hours*payrate
-    print(money)
+#\t เว้นวรรค
+print('--------------')
+print('KPHw\tMPH')
+print('--------------')
+for kph in range(60,131,10):
+    mph = (kph*0.621) 
+    print(kph,'\t', format(mph,',.1f'))
+print('--------------')
