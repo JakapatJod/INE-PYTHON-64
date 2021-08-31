@@ -133,7 +133,7 @@ def mainMENU():
             else :
                 print('\tNo option avaliable')
             
-            again = input('\t\tDo you want to again ? (Enter y for yes):')
+            again = input('\t\tDo you want to again ? (Enter y for yes): ')
             
         MENU.close()
 
