@@ -27,3 +27,4 @@ test1 ()
 for name in ['Black','Yellow','Blue']:
     print(name)
 print('5+4 =',(5+4))
+print('ESPRESSO','\nS = 110','\tM = 125','\tL = 140')

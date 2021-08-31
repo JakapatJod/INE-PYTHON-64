@@ -1,0 +1,12 @@
+============================================================
+                    HANDCRAFTED BEVERGES
+                                   S      M       L
+ESPRESSO                                           
+1.Caffe Latte                     110     125     140
+2.Cappuccino                      110     125     140 
+3.Caffe Mocha                     120     140     155
+4.Caramel Macchiato               135     150     165
+5.White Chocolate Mocha           135     150     165
+6.Caffe Americano                 100     115     130
+
+===============================================================
