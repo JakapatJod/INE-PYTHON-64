@@ -16,8 +16,7 @@ def mainMENU():
 
 
 def Run():
-    menu =['Caffe Latte','Cappuccino','Caffe Mocha','Caramel Macchiato'
-    ,'White Chocolate Mocha','Caffe Americano']
+    
     cost = [110,125,150,110,125,150,120,140,155,
         135,150,165,135,150,165,100,115,130]
     
