@@ -39,8 +39,7 @@ def Run():
         print('')
         order = int(input(Fore.YELLOW+'\t\t\tPlease insert your order : '))
         order = [int(a) for a in str(order)]
-        for val in order:
-            total = total + cost[val-1]
+        
         print(Fore.GREEN+"\t\t\tThis is the total : " + str(total) + "$")
         again = input(Fore.MAGENTA+'\t\t\tDo you want something more ? ( Enter y for yes ) : ')
         print('')
