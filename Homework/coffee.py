@@ -43,25 +43,28 @@ def Run():
             for val in order:
                 total = total + cost[val-1]
             print(Fore.GREEN+"\t\t\tThis is the total : " + str(total) + "$")
-            again = input(Fore.MAGENTA+'\t\t\tDo you want something more ? ( Enter y for yes ) : ')
+            again = input(Fore.GREEN+'\t\tDo you want something more ? ( Enter y for yes ) : ')
             print('')
             print(Back.BLUE+'-'*70)
     except IOError :
+        print('')
         print(Back.YELLOW+'*'*70)
         print('')
-        print(Fore.RED+'An error occured trying to read the file.') 
+        print(Fore.RED+'\t\t\tAn error occured trying to read the file.') 
         print('')
         print(Back.YELLOW+'*'*70)
     except ValueError:
+        print('')
         print(Back.YELLOW+'*'*70)
         print('')
-        print(Fore.RED+'Non-numeric data was found in the file.')
+        print(Fore.RED+'\t\t\tNon-numeric data was found in the file.')
         print('')
         print(Back.YELLOW+'*'*70)
     except:
+        print('')
         print(Back.YELLOW+'*'*70)
         print('')
-        print(Fore.RED+'An error occured.') 
+        print(Fore.RED+'\t\t\tAn error occured.') 
         print('')
         print(Back.YELLOW+'*'*70)   
 Run()
