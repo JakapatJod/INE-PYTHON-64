@@ -16,23 +16,52 @@ def mainMENU():
 
 
 def Run():
+    try:
+        import colorama
+        from colorama import Back , Fore , Style
+        colorama.init(autoreset=True)
+        cost = [110,125,150,110,125,150,120,140,155,
+            135,150,165,135,150,165,100,115,130]
     
-    cost = [110,125,150,110,125,150,120,140,155,
-        135,150,165,135,150,165,100,115,130]
-    
-    total = 0.0
+        total = 0.0
     
     
-    again = 'y'
-    while again == 'y':
-        print('')
-        mainMENU()
+        again = 'y'
+        while again == 'y':
+            print('')
+            mainMENU()
         
-        order = int(input('Please insert your order : '))
-        order = [int(a) for a in str(order)]
-        for val in order:
-            total = total + cost[val-1]
-        print("This is the total : " + str(total) + "$")
-        again = input('Do you want something more? : ')
-
+            print(Back.BLUE+'-'*70)
+            print('')
+            print(Fore.RED+'!! If you want a caffe latte size S, enter the number 2.'
+            ,Fore.RED+'\nEx.Please insert your order : 2 ')
+            print('')
+            print(Back.BLUE+'-'*70)
+            print('')
+            order = int(input(Fore.YELLOW+'\t\t\tPlease insert your order : '))
+            order = [int(a) for a in str(order)]
+            for val in order:
+                total = total + cost[val-1]
+            print(Fore.GREEN+"\t\t\tThis is the total : " + str(total) + "$")
+            again = input(Fore.MAGENTA+'\t\t\tDo you want something more ? ( Enter y for yes ) : ')
+            print('')
+            print(Back.BLUE+'-'*70)
+    except IOError :
+        print(Back.YELLOW+'*'*70)
+        print('')
+        print(Fore.RED+'An error occured trying to read the file.') 
+        print('')
+        print(Back.YELLOW+'*'*70)
+    except ValueError:
+        print(Back.YELLOW+'*'*70)
+        print('')
+        print(Fore.RED+'Non-numeric data was found in the file.')
+        print('')
+        print(Back.YELLOW+'*'*70)
+    except:
+        print(Back.YELLOW+'*'*70)
+        print('')
+        print(Fore.RED+'An error occured.') 
+        print('')
+        print(Back.YELLOW+'*'*70)   
 Run()

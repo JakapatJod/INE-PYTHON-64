@@ -1,6 +1,6 @@
 =======================================================================
                     HANDCRAFTED BEVERGES
-                                     S      M       L
+                                         S         M          L
 ESPRESSO                                           
 Caffe Latte                       [1]   110  [2]  125   [3]  140
 Cappuccino                        [6]   110  [5]  125   [4]  140 
