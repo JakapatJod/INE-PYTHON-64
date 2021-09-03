@@ -11,12 +11,13 @@ def Run():
 
         for i in MENU:
             temp = i.rsplit('\n')[0].split()
-            print(str(a)+'.'+temp[0].replace('_','  ').ljust(26)+temp[1].ljust(6)+temp[2].ljust(6)+temp[3])
+            print(str(a)+'.'+temp[0].replace('_','  ').ljust(26)+temp[1].ljust(6)
+            +temp[2].ljust(6)+temp[3])
             a = a + 1
         
         MENU.close()
 
-        total = 0.0
+        SUM = 0.0
 
         again = 'y'
         while again == 'y':
@@ -29,6 +30,8 @@ def Run():
             order = int(input(Fore.YELLOW+'\t\t\tPlease insert your order : '))
             size = input(Fore.YELLOW+'\t\t\tSelect size S , M , L: ').upper()
             
+            print('')
+
             if size == 'S':
                 size = 'S'
                 index = 1
@@ -50,11 +53,11 @@ def Run():
             for calculate in MENU:
                 if order == a: 
                     temp = calculate.rsplit('\a')[0].split()
-                    total += int(temp[index])
+                    SUM += int(temp[index])
                 a = a + 1
             print(Back.BLUE+'-'*70)
             print('')
-            print(Fore.GREEN+"\t\t\tThis is the total : " + str(total) + "$")
+            print(Fore.GREEN+"\t\t\tThis is the SUM : " + str(SUM) + "$")
             again = input(Fore.GREEN+'\t\tDo you want something more ? ( Enter y for yes ) : ')
             print('')
             print(Back.BLUE+'-'*70)
