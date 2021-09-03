@@ -1,14 +1,20 @@
-print('Multiply Table')
-Ferrari = 'y'    
-while Ferrari == 'y':    
-    Toyota = int(input('\tEnter the first number = '))
-    Ducati = Toyota + 1
-    BMW = Toyota + 2
-    print('-'*45)
+menu =['Caffe Latte','Cappuccino','Caffe Mocha','Caramel Macchiato'
+    ,'White Chocolate Mocha','Caffe Americano']
+cost = [110,125,150,110,125,150,120,140,155,
+        135,150,165,135,150,165,100,115,130]
+    
+size = ['S','M','L']
+    
+total = 0.0
+    
+    
+again = 'y'
+while again == 'y':
     print('')
-    for Tesla in range(1,13):
-        print('|','\t',Toyota,'*',Tesla,'=',Toyota*Tesla,'\t','|','\t'
-        ,Ducati,'*',Tesla,'=',Ducati*Tesla,'\t','|','\t',BMW,'*',Tesla,'=',BMW*Tesla,'\t','|')
-    print('')
-    print('-'*45)
-    Ferrari = input('Do you want to calculate again ? (Enter y for yes): ')
+        
+    order = int(input('Please insert your order : '))
+    order = [int(a) for a in str(order)]
+    for val in order:
+        total = total + cost[val-1]
+    print("This is the total : " + str(total) + "$")
+    again = input('Do you want something more? : ')
