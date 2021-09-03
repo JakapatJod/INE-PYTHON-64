@@ -1,70 +1,61 @@
-def mainMENU():
-    try:    
-        MENU = open('menu.txt','r')
-        READ = MENU.read()
-        print(READ)
-            
-        MENU.close()
-
-    
-    except IOError :
-        print('An error occured trying to read the file.') 
-    except ValueError:
-        print('Non-numeric data was found in the file.')
-    except:
-        print('An error occured.')
-
-
 def Run():
-    try:
         import colorama
         from colorama import Back , Fore , Style
         colorama.init(autoreset=True)
-        cost = [110,125,150,110,125,150,120,140,155,
-            135,150,165,135,150,165,100,115,130]
     
+        MENU = open('menu.txt','r')
+        
+        print(MENU.readline(),end='')
+        
+        a = 1
+
+        for i in MENU:
+            temp = i.rsplit('\n')[0].split()
+            print(str(a)+'.'+temp[0].replace('_','  ').ljust(26)+temp[1].ljust(6)+temp[2].ljust(6)+temp[3])
+            a = a + 1
+        
+        MENU.close()
+
         total = 0.0
-    
-    
+
         again = 'y'
         while again == 'y':
             print('')
-            mainMENU()
-        
+
             print(Back.BLUE+'-'*70)
+
             print('')
-            print(Fore.RED+'!! If you want a caffe latte size S, enter the number 2.'
-            ,Fore.RED+'\nEx.Please insert your order : 2 ')
-            print('')
-            print(Back.BLUE+'-'*70)
-            print('')
+
             order = int(input(Fore.YELLOW+'\t\t\tPlease insert your order : '))
-            order = [int(a) for a in str(order)]
-            for val in order:
-                total = total + cost[val-1]
+            size = input(Fore.YELLOW+'\t\t\tSelect size S , M , L: ').upper()
+            
+            if size == 'S':
+                size = 'S'
+                index = 1
+            elif size == 'M':
+                size = 'M'
+                index = 2
+            elif size == 'L':
+                size = 'L'
+                index = 3
+            
+            MENU = open('menu.txt', 'r')
+            
+            MENU.readline()
+            MENU.readline()
+            MENU.readline()
+            
+            a = 1
+            
+            for calculate in MENU:
+                if order == a: 
+                    temp = calculate.rsplit('\a')[0].split()
+                    total += int(temp[index])
+                a = a + 1
+            print(Back.BLUE+'-'*70)
+            print('')
             print(Fore.GREEN+"\t\t\tThis is the total : " + str(total) + "$")
             again = input(Fore.GREEN+'\t\tDo you want something more ? ( Enter y for yes ) : ')
             print('')
             print(Back.BLUE+'-'*70)
-    except IOError :
-        print('')
-        print(Back.YELLOW+'*'*70)
-        print('')
-        print(Fore.RED+'\t\t\tAn error occured trying to read the file.') 
-        print('')
-        print(Back.YELLOW+'*'*70)
-    except ValueError:
-        print('')
-        print(Back.YELLOW+'*'*70)
-        print('')
-        print(Fore.RED+'\t\t\tNon-numeric data was found in the file.')
-        print('')
-        print(Back.YELLOW+'*'*70)
-    except:
-        print('')
-        print(Back.YELLOW+'*'*70)
-        print('')
-        print(Fore.RED+'\t\t\tAn error occured.') 
-        print('')
-        print(Back.YELLOW+'*'*70)   
 Run()
