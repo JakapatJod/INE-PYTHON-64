@@ -1,4 +1,5 @@
 def Run():
+    try:
         import colorama
         from colorama import Back , Fore , Style
         colorama.init(autoreset=True)
@@ -7,12 +8,18 @@ def Run():
         
         print(MENU.readline(),end='')
         
+        custom = MENU.readline()
+        
+        print(custom.split()[0].rjust(0)+custom.split()[1].rjust(22)
+        +custom.split()[2].rjust(6)+custom.split()[3].rjust(6))
+    
         a = 1
 
         for i in MENU:
-            temp = i.rsplit('\n')[0].split()
-            print(str(a)+'.'+temp[0].replace('_','  ').ljust(26)+temp[1].ljust(6)
-            +temp[2].ljust(6)+temp[3])
+            custom = i.rsplit('\n')[0].split()
+            print(str(a)+'.'+custom[0].replace('_',' ').ljust(26)
+            +custom[1].ljust(6)+custom[2].ljust(6)+custom[3])
+            
             a = a + 1
         
         MENU.close()
@@ -28,17 +35,17 @@ def Run():
             print('')
 
             order = int(input(Fore.YELLOW+'\t\t\tPlease insert your order : '))
-            size = input(Fore.YELLOW+'\t\t\tSelect size S , M , L: ').upper()
+            scale = input(Fore.YELLOW+'\t\t\tSelect size S , M , L: ').upper()
             
             print('')
 
-            if size == 'S':
+            if scale == 'S':
                 size = 'S'
                 index = 1
-            elif size == 'M':
+            elif scale == 'M':
                 size = 'M'
                 index = 2
-            elif size == 'L':
+            elif scale == 'L':
                 size = 'L'
                 index = 3
             
@@ -46,14 +53,13 @@ def Run():
             
             MENU.readline()
             MENU.readline()
-            MENU.readline()
             
             a = 1
             
             for calculate in MENU:
                 if order == a: 
-                    temp = calculate.rsplit('\a')[0].split()
-                    SUM += int(temp[index])
+                    custom = calculate.rsplit('\a')[0].split()
+                    SUM += int(custom[index])
                 a = a + 1
             print(Back.BLUE+'-'*70)
             print('')
@@ -61,4 +67,23 @@ def Run():
             again = input(Fore.GREEN+'\t\tDo you want something more ? ( Enter y for yes ) : ')
             print('')
             print(Back.BLUE+'-'*70)
+    except IOError :
+        print(Back.RED+'-'*70)
+        print('')
+        print(Fore.GREEN+'\t\tAn error occured trying to read the file.')
+        print('')
+        print(Back.RED+'-'*70)
+    except ValueError:
+        print(Back.RED+'-'*70)
+        print('')
+        print(Fore.GREEN+'\t\tNon-numeric data was found in the file.')
+        print('')
+        print(Back.RED+'-'*70)
+    except:
+        print(Back.RED+'-'*70)
+        print('')
+        print(Fore.GREEN+'\t\tAn error occured.')
+        print('')
+        print(Back.RED+'-'*70)
+
 Run()
