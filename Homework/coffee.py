@@ -34,8 +34,8 @@ def Run():
 
             print('')
 
-            order = int(input(Fore.YELLOW+'\t\t\tPlease insert your order : '))
-            scale = input(Fore.YELLOW+'\t\t\tSelect size S , M , L: ').upper()
+            order = int(input(Fore.YELLOW+'\t\t\tSelect a menu from the top. : '))
+            scale = input(Fore.YELLOW+'\t\t\tChoose size S , M , L : ').upper()
             
             print('')
 
