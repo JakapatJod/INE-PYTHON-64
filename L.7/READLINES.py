@@ -6,10 +6,10 @@ def main():
     infile.close()
 
     index = 0
-    
+    # Strip the \n from each element.
     while index < len(cities):
         cities[index] = cities[index].rstrip('\n')
-        index += 1
+        index = index + 1
     
     print('')
     print(cities)
