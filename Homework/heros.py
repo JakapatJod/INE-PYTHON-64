@@ -28,6 +28,11 @@ def main():
                 print(HERO)
             elif op == 3 :
                 print('')
+                print(HERO)
+                num = int(input('Choose location : '))
+                hero =input('Which hero would you like ? : ')
+                HERO.insert(num,hero)
+                print(HERO)
             elif op == 4 :
                 print(HERO)
                 print(RED+'\tDr.strange = " d " ','\tCpt.MARVEL = " c " ',
