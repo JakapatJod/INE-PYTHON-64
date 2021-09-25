@@ -1,15 +1,15 @@
-
 import pickle
 def main():
-    phone ={'Toon':'065-6267683','Min':'096-9936296','Wave':'095-7083561','Bunnapon':'063-8011033'
-                ,'Jane':'092-9907061','Mic':'0809031245','Plam':'096-3916108','Mac':'082-0759182',
-                 'Deaw':'095-6123020','Dan':'0613298526','Chalongrath':'099-9165470','Fern':'062-3289157'
-                ,'Bell':'0927845184','Earth':'063-0688993'}
+    phone = {'Gust':'0946192332','Earth':'0630688993','Deaw':'095-6123020','Bell':'0927845184','Dan':'0613298526','Chalongrath':'099-9165470'
+    ,'Fern':'062-3289157','Mac':'082-0759182','Plam':'096-3916108','Mic':'0809031245','Jane':'092-9907061','Bunnapon':'0638011033','Wave':'0957083561',
+    'Min':'096-9936296','Toon':'065-6267683'}
 
-    output_file = open('PhoneNumber.dat','wb')
+    Openfile = open('PhoneNumber.dat','wb')
     
-    output_file.close()
+    Openfile.close()
+    
     again = 'y'
+    
     while again == 'y' :
         print('Please select operation Number !!','\n\t1.Show all of the user and phone number','\n\t2.Find phone number from name',
         '\n\t3.Fix phone number from name','\n\t4.Delete phone number from name ','\n\t5.Clear all of the information ')
