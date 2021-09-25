@@ -1,56 +1,71 @@
 import pickle
-def main():
-    phone = {'Gust':'0946192332','Earth':'0630688993','Deaw':'095-6123020','Bell':'0927845184','Dan':'0613298526','Chalongrath':'099-9165470'
-    ,'Fern':'062-3289157','Mac':'082-0759182','Plam':'096-3916108','Mic':'0809031245','Jane':'092-9907061','Bunnapon':'0638011033','Wave':'0957083561',
-    'Min':'096-9936296','Toon':'065-6267683'}
+
+def main(): 
+    PHONE = {'Gust':'0946192332','Earth':'0630688993','Deaw':'0956123020','Bell':'0927845184','Dan':'0613298526','Chalongrath':'0999165470'
+    ,'Fern':'0623289157','Mac':'0820759182','Plam':'0963916108','Mic':'0809031245','Jane':'092-9907061','Bunnapon':'0638011033'
+    ,'Wave':'0957083561','Min':'0969936296','Toon':'065-6267683'}
 
     Openfile = open('PhoneNumber.dat','wb')
+    pickle.dump(PHONE,Openfile)
     
-    Openfile.close()
+    SHOW_NAME_PHONE = 1
+    FIND = 2
+    CHANGE_THE_PHONE_NUMBER = 3
+    DELETE_PHONE_NUMBER = 4
+    CLEAR_ALL = 5
+    EXIT_PROGRAM = 6
     
-    again = 'y'
+    order = 0
     
-    while again == 'y' :
-        print('Please select operation Number !!','\n\t1.Show all of the user and phone number','\n\t2.Find phone number from name',
-        '\n\t3.Fix phone number from name','\n\t4.Delete phone number from name ','\n\t5.Clear all of the information ')
+    while order != EXIT_PROGRAM :
+    
+        print('Please select operation Number !!','\n\t1.Show name and phone number.','\n\t2.Find phone number from name.',
+        '\n\t3.Change the phone number you want.','\n\t4.Delete the phone number you want. ','\n\t5.Clear all.','\n\t6.Exit Program.')
 
-        order = int(input("Select the number: "))
+        order = int(input("Select the number : "))
     
-        if order == 1 :
-            input_file = open('PhoneNumber.dat','rb')
-            read = pickle.load(input_file)
-            print(read)
+        if order == SHOW_NAME_PHONE :
+            Openfile = open('PhoneNumber.dat','rb')
+            read = pickle.load(Openfile)
+            print('\t',read)
     
-        elif order == 2 :
+        elif order == FIND :
+            FileName = input("Find phone number from name : ")
+            Openfile = open('PhoneNumber.dat','rb')
+            Enter_FIND = pickle.load(Openfile)
+            if FileName in Enter_FIND:
+                print('\t',Enter_FIND[FileName])
+            else:
+                print('No options available!!')
+    
+        elif order == CHANGE_THE_PHONE_NUMBER:
             FileName = input("Enter the name for find phone number: ")
-            input_file = open('PhoneNumber.dat','rb')
-            display_file = pickle.load(input_file)
-            if FileName in display_file:
-                print(display_file[FileName]) 
-    
-        elif order == 3:
-            input_file = open('PhoneNumber.dat','wb')
-            FileName = input("Enter the name for find phone number: ")
-            phone = input('Enter the phone number would like to change: ')
-            [FileName] = phone
+            phoneNumber = input('Enter the phone number would like to change: ')
+            Openfile = open('PhoneNumber.dat','wb')
+            [FileName] = phoneNumber
         
-        elif order == 4: 
-            FileName = input("Enter the name for delete user: ")
-            input_file = open('PhoneNumber.dat','wb')
-            display_file = pickle.dump(input_file)
+        elif order == DELETE_PHONE_NUMBER: 
+            FileName = input("Enter the name you want to delete. : ")
+            Openfile = open('PhoneNumber.dat','wb')
+            display_file = pickle.dump(PHONE,Openfile)
             del display_file[FileName]
-            input_file = open('PhoneNumber.dat','rb')
-            display_file = pickle.load(input_file)
+            Openfile = open('PhoneNumber.dat','rb')
+            display_file = pickle.load(PHONE,Openfile)
             print(display_file)
     
-        elif order == 5 : 
-            input_file = open('Phone.dat01','wb')
-            display_file = pickle.dump(input_file)
-            del display_file[input_file]
+        elif order == CLEAR_ALL : 
+            Openfile = open('PhoneNumber.dat','r+')
+            display_file = pickle.dump(Openfile)
+            del display_file[Openfile]
             print('after clear')
+        
+        elif order == EXIT_PROGRAM : 
+            print('-'*50)
+            print('\tExiting the program....')
+            print('-'*50)
         
         else:
             print('No options available!!')
         
-        again = input('Do you want again ? (Enter y for yes) : ')
+        Openfile.close()
 main()
