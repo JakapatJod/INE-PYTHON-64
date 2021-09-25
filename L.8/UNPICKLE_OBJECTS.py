@@ -1,4 +1,3 @@
-from os import name
 import pickle
 
 def main():
@@ -23,5 +22,6 @@ def display_data(person):
     print('Name:',person['name'])
     print('Age:', person['age'])
     print('Weight:', person['weight'])
+    print()
 
 main()

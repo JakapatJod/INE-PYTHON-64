@@ -5,7 +5,7 @@ def main():
 
     output_file = open('info.dat', 'wb')
 
-    while again.lower == 'y':
+    while again.lower() == 'y':
 
         save_data(output_file)
 
