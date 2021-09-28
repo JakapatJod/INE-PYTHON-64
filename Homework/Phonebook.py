@@ -93,7 +93,7 @@ def main():
                 print('')
                 print(RED+'There is no key for this option.')
                 print('')
-                print(YELLOW+'-'*50)
+                print(YELLOW+'-'*50) 
                 print('')
         elif order == CLEAR_ALL : 
             os.remove('./PhoneNumber.dat')
